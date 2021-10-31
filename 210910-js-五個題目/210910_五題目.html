@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 開始0分
+    let score = 0
+    
+    let q1 = confirm('蘋果是紅色的？')
+    if (q1){
+      score += 10
+      alert('答對，+10')
+    } else {
+      alert('答錯了')
+    }
+
+    let q2 = prompt('請輸入香蕉是什麼顏色')
+    if ((q2 == '黃色') || (q2 == '黃') || (q2 == 'yellow')){
+      score += 10
+      alert('答對，+10')
+    } else {
+      alert('答錯了')
+    }
+
+    let q3 = confirm('橘子是橘色的？')
+    if (q3){
+      score += 10
+      alert('答對，+10')
+    } else {
+      let q3_1 = confirm('再問一次，橘子是橘色的嗎？')
+        if (q3_1) {
+          score += 5
+          alert('終於答對了，+5')
+        } else {
+          alert('還是答錯了')
+        }
+    }
+
+    let q4 = prompt('猜一個數字(0~10)')
+    const num = 4
+
+    if((q4 > num)){
+      alert('數字比你猜的小')
+    } else if ((q4 < num)){
+      alert('數字比你猜的還大')
+    } else if (q4 == num){
+      score += 20
+      alert('猜對了，+20')
+    }
+
+    let q5 = prompt('番茄的英文是？')
+      if(q5 === 'tomato'){
+        score += 10
+        alert('答對一題，+10')
+        let q5_1 = prompt('馬鈴薯的英文是？')
+        if (q5_1 === 'potato'){
+          score += 20
+          alert('都答對了，+20')
+        } else if (q5_1 === '不知道'){
+          alert('請查詢Google翻譯')
+        } else {
+          alert('答錯了')
+        }
+      } else if (q5 === '不知道') {
+        alert('請查詢Google翻譯')
+      } else {
+        alert('答錯了')
+      }
+
+    document.write(`問題結束，你獲得了 ${score} 分！`)
+  </script>
+
+</body>
+</html>
