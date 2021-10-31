@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: url(./022119_EC_expanding-universe_feat.jpg) no-repeat center center/cover;
+      cursor: url(./huixing.png) 0 0, auto;
+    }
+
+    .hole {
+      width: 120px;
+      height: 120px;
+      /* border: 1px solid rgb(255, 255, 255); */
+      background: transparent;
+      border-radius: 16px;
+    }
+
+    .text {
+      text-align: center;
+      margin: 10px;
+    }
+
+    .text p {
+      margin-bottom: 15px;
+      display: inline-block;
+      color: white;
+    }
+
+    span {
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    table {
+      border-spacing: 10px;
+    }
+
+    .earth {
+      transform: translateY(-20px);
+      transition: 1s;
+      background: url(./earth.png) no-repeat center center/cover;
+    }
+
+    .boom {
+      transform: translateY(-20px);
+      background: url(./boom.png) no-repeat center center/cover;
+    }
+
+    /* 按鈕 */
+    #start {
+      width: 150px;
+      height: 50px;
+      border-radius: 16px;
+      border: none;
+      background: transparent;
+      color: transparent;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 35px;
+      cursor: pointer;
+    }
+
+    #start:hover {
+      width: 150px;
+      height: 50px;
+      border: none;
+      border-radius: 16px;
+      background: transparent;
+      box-shadow: inset 0 0 20px rgb(19, 16, 53);
+      color: rgb(210, 226, 255);
+      text-shadow: 0 0 10px rgb(241, 159, 209), 0 0 10px rgb(241, 159, 209);
+    }
+
+    /* #game {} */
+    /* cursor: url(檔案路徑) 滑鼠X座標 滑鼠X座標 , auto
+      cursor: url(./huixing.png) 0 0, auto; */
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <table id="game">
+      <tr>
+        <td class="hole" id="hole7"></td>
+        <td class="hole" id="hole8"></td>
+        <td class="hole" id="hole9"></td>
+      </tr>
+      <tr>
+        <td class="hole" id="hole4"></td>
+        <td class="hole" id="hole5"></td>
+        <td class="hole" id="hole6"></td>
+      </tr>
+      <tr>
+        <td class="hole" id="hole1"></td>
+        <td class="hole" id="hole2"></td>
+        <td class="hole" id="hole3"></td>
+      </tr>
+    </table>
+    <div class="text">
+      <input type="button" value="開始遊戲" id="start">
+      <br>
+      <p>目前分數: </p><span id="score">0</span>
+      <!-- <p>分</p> -->
+      <p>玩家: </p><span id="highname">???</span>
+      <p>最高分數: </p><span id="highscore">0</span>
+      <p>miss: </p><span id="miss">0</span>
+    </div>
+  </div>
+
+  <script>
+    const holes = document.getElementsByClassName('hole')
+    const start = document.getElementById('start')
+    const scoreText = document.getElementById('score')
+    const highnameText = document.getElementById('highname')
+    const highscoreText = document.getElementById('highscore')
+    const missText = document.getElementById('miss')
+
+    // 最高分
+    const high = { score: 0, name: '???' }
+    // 分數計分
+    let score = 0
+    // 計時器
+    let timer = 0
+    // 音效
+    // const audio = new Audio()
+
+    // 讀取資料
+    const storage = JSON.parse(localStorage.getItem('dadishu'))
+    // 如果有資料
+    if (storage) {
+      high.name = storage.name
+      high.score = storage.score
+      // 修改最高分顯示文字
+      highnameText.innerText = high.name
+      highscoreText.innerText = high.score
+    }
+
+
+    start.onclick = () => {
+      // 停用開始按鈕
+      start.disabled = true
+      // 分數重設
+      score = 0
+      miss = 0
+      scoreText.innerText = score
+      missText.innerText = miss
+      // 每秒變換一次
+      timer = setInterval(game, 1500)
+      game()
+      // 十秒後遊戲結束
+      setTimeout(end, 10 * 1000)
+    }
+    // 每秒變換顏色
+    const game = () => {
+      // 移除顏色
+      for (const hole of holes) {
+        hole.classList.remove('earth')
+        hole.classList.remove('boom')
+      }
+      // 隨機抽三個變換成紅色, 不考慮重複
+      for (let i = 0; i < 3; i++) {
+        holes[Math.round(Math.random() * (holes.length - 1))].classList.add('earth')
+      }
+    }
+    // 遊戲結束
+    const end = () => {
+      // 停止變換顏色
+      clearInterval(timer)
+      // 把顏色清除
+      for (const hole of holes) {
+        hole.classList.remove('earth')
+        hole.classList.remove('boom')
+      }
+      // 啟用開始按鈕
+      start.disabled = false
+      // 跳出訊息
+      alert(`遊戲結束 分數:${score}, 失誤:${miss}`)
+      // 記錄最高分
+      if (score > high.score) {
+        // audio.src = './rihai.mp3'
+        // audio.play()
+        // 請玩家輸入名字
+        const input = prompt(`最高分${highscore}, 請輸入名字`)
+        // 修改最高分變數資料
+        high.score = score
+        high.name = input || '???'
+        // 修改最高分顯示文字
+        highnameText.innerText = high.name
+        highscoreText.innerText = high.score
+        // 保存
+        // localStorage.setItem(資料名、文字)
+        // 變數轉文字: JSON.stringify(變數)
+        localStorage.setItem('dadishu', JSON.stringify(high))
+      }
+    }
+    // 點擊變色
+    for (const hole of holes) {
+      hole.onclick = () => {
+        // 如果點下去時是地球
+        if (hole.classList.contains('earth')) {
+          // 爆炸
+          hole.classList.replace('earth', 'boom')
+          // 加分
+          score++
+          scoreText.innerText = score
+        } else {
+          miss++
+          missText.innerText = miss
+        }
+      }
+    }
+
+    // 數字鍵
+    document.onkeydown = event => {
+      // 按了什麼鍵
+      const key = event.key
+      // 如果是數字鍵
+      if (!isNaN(key)) {
+        // 找到對應的格子
+        const target = document.getElementById(`hole${key}`)
+        // 如果有找到
+        if (target && target.classList.contains('earth')) {
+          // 變為藍色
+          target.classList.replace('earth', 'boom')
+          // 加分
+          score++
+          scoreText.innerText = score
+        } else {
+          miss++
+          missText.innerText = miss
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>
