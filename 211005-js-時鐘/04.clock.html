@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      z-index: -1;
+      background: #000;
+    }
+
+    .bg-image img {
+      width: 120%;
+      animation: bg 30s linear infinite;
+    }
+
+    .line {
+      width: 30px;
+      height: 90px;
+      position: absolute;
+      bottom: 45%;
+      left: 45%;
+      box-shadow: 5px 5px 20px rgba(126, 136, 230, 0.5);
+      border-top-left-radius: 23px;
+      border-top-right-radius: 23px;
+      border-bottom-left-radius: 23px;
+      border-bottom-right-radius: 23px;
+      background: linear-gradient(rgb(230, 134, 209) 10%, rgb(49, 131, 238)90%);
+      z-index: 1;
+      transform: translateY(0);
+    }
+
+    .circle {
+      background: rgb(0, 0, 0);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      position: relative;
+      background: linear-gradient(rgb(230, 134, 209) 10%, rgb(49, 131, 238)90%);
+      box-shadow: 0 0 55px 0 rgba(71, 91, 180, 0.726);
+      animation-name: circle;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .circle::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #000;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      box-shadow: inset 0 0 15px 0 rgba(236, 137, 220, 0.658);
+    }
+
+    #clock {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      left: -50%;
+      transform: translateX(50%);
+    }
+
+    #hour {
+      background: rgb(230, 134, 209);
+      width: 22%;
+      height: 1px;
+      border-radius: 5px;
+      position: absolute;
+      /* calc 數學符號前後要有空格 */
+      top: calc(50% - 5px);
+      left: 50%;
+      transform: rotate(90deg);
+      transform-origin: left center;
+      z-index: 1;
+    }
+
+    #minute {
+      background: rgb(49, 131, 238);
+      width: 33%;
+      height: 1px;
+      border-radius: 5px;
+      position: absolute;
+      top: calc(50% - 5px);
+      left: 50%;
+      transform: rotate(0deg);
+      transform-origin: left center;
+      z-index: 1;
+    }
+
+    #second {
+      background: rgb(0, 0, 0);
+      width: 65%;
+      height: 15px;
+      border-radius: 5px;
+      position: absolute;
+
+      top: calc(50% - 5px);
+      left: 50%;
+      transform: rotate(0deg);
+      transform-origin: left center;
+      z-index: 1;
+    }
+
+    @keyframes bg {
+      0% {
+        transform: translateY(20px);
+      }
+
+      100% {
+        transform: translateY(700px);
+      }
+    }
+
+    @keyframes circle {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .year-month-day {
+      font-size: 30px;
+      color: white;
+    }
+
+    #year-month-date {
+      font-size: 50px;
+      color: rgb(255, 228, 249);
+      position: absolute;
+      left: 100px;
+      text-shadow: 0 0 15px rgb(255, 202, 255), 0 0 25px rgb(255, 157, 255), 0 0 15px rgb(255, 202, 255);
+      -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+    }
+
+    .scale-set {
+      width: 3px;
+      height: 50px;
+      position: absolute;
+      box-shadow: 2px 2px 10px rgba(126, 136, 230, 0.185);
+      background: linear-gradient(rgb(49, 131, 238, .5) 10%, rgb(49, 131, 238, .5)90%);
+      color: white;
+    }
+
+    .scale {
+      width: 3px;
+      height: 50px;
+      position: absolute;
+      box-shadow: 2px 2px 10px rgba(126, 136, 230, 0.185);
+      background: linear-gradient(rgb(49, 131, 238, .5) 10%, rgb(49, 131, 238, .5)90%);
+      top: 90px;
+    }
+
+    .s1 {
+      transform: rotate(30deg);
+      top: 28px;
+      left: 104px;
+    }
+
+    .s2 {
+      transform: rotate(60deg);
+      top: 93px;
+      left: 184px;
+    }
+
+    .s3 {
+      transform: rotate(90deg);
+      top: 200px;
+      left: 217px;
+    }
+
+    .s4 {
+      transform: rotate(120deg);
+      top: 317px;
+      left: 193px;
+    }
+
+    .s5 {
+      transform: rotate(150deg);
+      top: 405px;
+      left: 124px;
+    }
+
+    .s6 {
+      transform: rotate(180deg);
+      top: 438px;
+      left: 0px;
+    }
+
+    .s7 {
+      transform: rotate(210deg);
+      top: 393px;
+      left: -123px;
+    }
+
+    .s8 {
+      transform: rotate(240deg);
+      top: 317px;
+      left: -193px;
+    }
+
+    .s9 {
+      transform: rotate(270deg);
+      top: 200px;
+      left: -217px;
+    }
+
+    .s10 {
+      transform: rotate(300deg);
+      top: 93px;
+      left: -184px;
+    }
+
+    .s11 {
+      transform: rotate(330deg);
+      top: 28px;
+      left: -104px;
+    }
+
+    #timeNumber {
+      font-size: 50px;
+      position: absolute;
+      right: 100px;
+      color: rgb(255, 228, 249);
+      text-shadow: 0 0 15px rgb(255, 202, 255), 0 0 25px rgb(255, 157, 255), 0 0 15px rgb(255, 202, 255);
+      -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+    }
+
+    #secondNumber {
+      text-align: center;
+      font-size: 1rem;
+      position: absolute;
+      color: #fff;
+      transform-origin: center;
+      top: 17%;
+      left: 51px;
+      width: 200px;
+      height: 200px;
+      z-index: 66;
+    }
+
+    .line:hover circle {
+      transform: translateY(-50px);
+      transition: 2s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-image"><img src="./未命名-1.png" alt=""></div>
+  <div id="year-month-date"></div>
+  <div id="timeNumber"></div>
+  <!-- <div class="scale scale-set">
+    <div class="s1 scale-set"></div>
+    <div class="s2 scale-set"></div>
+    <div class="s3 scale-set"></div>
+    <div class="s4 scale-set"></div>
+    <div class="s5 scale-set"></div>
+    <div class="s6 scale-set"></div>
+    <div class="s7 scale-set"></div>
+    <div class="s8 scale-set"></div>
+    <div class="s9 scale-set"></div>
+    <div class="s10 scale-set"></div>
+    <div class="s11 scale-set"></div>
+  </div> -->
+  <div id="clock">
+
+    <div id="secondNumber"></div>
+    <div id="hour"></div>
+    <div id="minute"></div>
+    <div id="second"></div>
+    <div class="circle"></div>
+    <div class="line"></div>
+
+  </div>
+
+  <script>
+    const hour = document.getElementById('hour')
+    const minute = document.getElementById('minute')
+    const second = document.getElementById('second')
+    const yearMonthDate = document.getElementById('year-month-date')
+    const timeNumber = document.getElementById('timeNumber')
+    const secondNumber = document.getElementById('secondNumber')
+
+    setInterval(() => {
+      const now = new Date()
+      hour.style.transform = `rotate(${30 * now.getHours() - 90}deg)`
+      minute.style.transform = `rotate(${6 * now.getMinutes() - 90}deg)`
+      second.style.transform = `rotate(${6 * now.getSeconds() - 90}deg)`
+      timeNumber.innerHTML = `${now.getHours()}. ${now.getMinutes()}. ${now.getSeconds()}`
+      secondNumber.innerHTML = `${now.getSeconds()}`
+      secondNumber.style.transform = `rotate(${6 * now.getSeconds()}deg)`
+    }, 1000)
+
+    let time = new Date()
+    yearMonthDate.innerHTML = `${time.getFullYear()}. ${time.getMonth() + 1}. ${time.getDate()}`
+
+
+  </script>
+</body>
+
+</html>
