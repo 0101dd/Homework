@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const random = (min, max) => {
+      return Math.round(Math.random() * (max - min)) + min
+    }
+
+    const arrA = []
+    for (let i = 0; i < arrA.length; i++) {
+      // 隨即取一個數
+      const num = random(1, 38)
+      // 如果重複, 迴圈再跑一次
+      if (arrA.includes(num)) {
+        // i-- i++ 要抵消 取出的數字才不會多一個
+        i--
+      } else {
+        // 如果沒有重複, 塞進arrA陣列裡面
+        arrA.push(num)
+      }
+    }
+  </script>
+</body>
+
+</html>

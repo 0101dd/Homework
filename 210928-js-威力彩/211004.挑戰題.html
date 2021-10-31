@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    製作凱薩密碼 (Caesar Cipher) 加密工具
+使用者先輸入英文明文，再輸入數字密鑰
+請編寫一個 function 處理資料
+將明文和密鑰傳入，回傳處理完後的密文
+最後在網頁上顯示
+    */
+
+    const inputText = prompt('text').toUpperCase()
+    const inputKey = parseInt(prompt('key'))
+
+    const encrypt = (text, key) => {
+      let result = ''
+      // 迴圈處理每個文字
+      for (let i = 0; i < text.length; i++) {
+        // 取得文字 ASCII Code
+        let code = text.charCodeAt(i)
+        // 如果不是空白（空白字元為32）
+        if (code !== 32) {
+          // 計算新的 ASCII Code
+          code = (code - 65 + key) % 26 + 65
+          // 新的ASCII Code 轉回文字串起來
+          result += String.fromCharCode(code)
+        } else {
+          result += ''
+        }
+      }
+      result = + ''
+    }
+
+    document.write(encrypt(inputText, inputKey))
+
+
+    /* 
+    文文記性不太好，常常會忘東忘西。他也常忘記提款卡密碼，每次忘記密碼都得帶著身份證、存摺、印章親自到銀行去重設密碼，還得繳交 50 元的手續費，很是麻煩。後來他決定把密碼寫在提款卡上免得忘記，但是這樣一來，萬一提款卡掉了，存款就會被盜領。因此他決定以一個只有他看得懂的方式把密碼寫下來。
+    
+    他的密碼有 6 位數，所以他寫下了 7 個大寫字母，相鄰的每兩個字母間的「距離」就依序代表密碼中的一位數。所謂「距離」指的是從較「小」的字母要數幾個字母才能數到較「大」字母。字母的大小則是依其順序而定，越後面的字母越「大」。
+    
+    假設文文所寫的 7 個字母是 POKEMON，那麼密碼的第一位數就是字母 P 和 O 的「距離」，由於 P 就是 O 的下一個字母，因此，從 O 開始只要往下數一個字母就是 P 了，所以密碼的第一位數就是 1。密碼的第二位數則是字母 O 和 K 的「距離」，從 K 開始，往下數 4 個字母 (L, M, N, O) 就到了 O，所以第二位數是 4，以此類推。因此，POKEMON 所代表的密碼便是 146821。
+    */
+
+    const decrypt = (text) => {
+      // ... 在此寫你的程式碼
+
+      for (let i = 1; i < text.length; i++) {
+        const diff = Math.abs(text.charCodeAt(i) - text.charCodeAt(i - 1))
+        result += diff
+      }
+      return result
+    }
+
+    const input = prompt('輸入文字')
+    console.log(decrypt(input))
+
+  </script>
+</body>
+
+</html>

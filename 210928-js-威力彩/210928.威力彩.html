@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1到8的隨機數字
+    for (let i = 0; i < 1; i++) {
+      const numb = Math.round(Math.random() * (8 - 1) + 1)
+
+      document.write(numb)
+    }
+
+    document.write(`<br>`)
+
+    // 1到32的隨機數字, 取6個 不能重複
+    let arr = []
+    for (let i = 0; i < 6; i++) {
+      const numa = Math.round(Math.random() * (32 - 1) + 1)
+      for (j = 0; j < arr.length; j++) {
+        if (arr[j] === numa) {
+          arr.splice(j, 1)
+          i--
+        }
+      }
+      arr.push(numa)
+    }
+
+    document.write(arr)
+
+  </script>
+</body>
+
+</html>
