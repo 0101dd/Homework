@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: url(./封面.jpg) no-repeat top right/80%;
+      font-family: '華康新篆體', 'Noto Serif TC', serif;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .intro {
+      writing-mode: vertical-rl;
+      position: absolute;
+      top: 50px;
+      left: 210px;
+      font-family: '華康儷粗宋';
+      letter-spacing: 15px;
+      cursor: default;
+    }
+
+    .intro h3 {
+      font-size: 40px;
+    }
+
+    .intro h3:hover {
+      color: rgb(211, 4, 4);
+    }
+
+    .intro::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 53px;
+      width: 1.2px;
+      height: 250px;
+      background: #000;
+    }
+
+    .intro p {
+      padding-top: 50px;
+      height: 500px;
+      font-size: 1.2rem;
+      line-height: 2;
+      margin-right: 20px;
+    }
+
+    .text {
+      position: absolute;
+      top: 462px;
+      left: 122px;
+      z-index: 11;
+
+    }
+
+    a {
+      writing-mode: vertical-lr;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-size: 24px;
+      letter-spacing: 5px;
+    }
+
+    a:hover {
+      color: black;
+    }
+
+    img {
+      width: 70px;
+      position: absolute;
+      top: 450px;
+      left: 100px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="intro">
+      <h3>認識草書</h3>
+      <p>&emsp;&emsp;幫助認識和學習草書的小遊戲。</p>
+    </div>
+    <div class="text">
+      <a href="./01_mu_lu.html">開始遊戲</a>
+    </div>
+    <img src="./img/印章.png">
+
+  </div>
+
+  <script src="./jquery-3.6.0.min.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>

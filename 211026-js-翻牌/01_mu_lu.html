@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: url(./目錄.png) no-repeat top right / 130%;
+      writing-mode: vertical-rl;
+    }
+
+    .container {
+      letter-spacing: 10px;
+      margin-top: 20px;
+      font-family: '華康儷粗宋';
+      position: relative;
+    }
+
+    h1 {
+      font-size: 100px;
+      cursor: default;
+      margin-left: 100px;
+      margin-right: 50px;
+    }
+
+    .container img {
+      width: 100px;
+      position: absolute;
+      top: 150px;
+      right: -40px;
+      z-index: -1;
+      transform: rotate(70deg);
+    }
+
+    .container p {
+      height: 80%;
+      margin-top: 90px;
+      font-size: 18px;
+      line-height: 2;
+      cursor: default;
+    }
+
+    h3 {
+      font-size: 40px;
+      margin: 50px 80px 0 30px;
+      font-family: '華康新篆體';
+      position: relative;
+    }
+
+    h3:before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 300px;
+      background: #000;
+      top: 20px;
+      right: 50px;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      color: rgb(211, 4, 4);
+    }
+
+    .text img {
+      width: 80px;
+      position: absolute;
+      top: 400px;
+      right: 1150px;
+      cursor: pointer;
+      transform: rotate(0deg);
+    }
+
+    .text a {
+      writing-mode: vertical-rl;
+      text-decoration: none;
+      color: white;
+      font-family: '華康新篆體';
+      font-size: 24px;
+      position: absolute;
+      top: 415px;
+      right: 1177px;
+    }
+
+    .text a:hover {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>目錄</h1>
+    <img src="./img/circle.png">
+    <h3><a href="./05_shufafanpai_xuexi.html">學習區</a></h3>
+    <p>先認識遊戲當中會出現的草書。</p>
+    <h3><a href="./02_shufafanpai_xiaoshi.html">小試身手</a></h3>
+    <p>翻開上方蓋住的卡片，將卡片顯示的草書和下方的楷書做配對。</p>
+    <h3><a href="./03_shufafanpai_jiandan.html">簡單挑戰</a></h3>
+    <p>翻開蓋住的卡片，記住每張卡片上草書或是楷書的字和位置，將成對的卡片做配對。</p>
+    <h3><a href="./04_shufafanpai_jinjie.html">進階挑戰</a></h3>
+    <p>翻開上方蓋住的卡片，在輸入框中輸入對應的文字並按下確認按鈕，如果輸入正確的文字卡片就會消失。</p>
+    <div class="text">
+      <a href="./00_shufafanpai_shouye.html">開始畫面</a>
+      <img src="./img/印章.png">
+    </div>
+
+  </div>
+</body>
+
+</html>

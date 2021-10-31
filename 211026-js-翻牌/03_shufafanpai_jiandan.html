@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      background: url(./img/背景圖.jpg) no-repeat top center/110%;
+
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #game {
+      width: 60%;
+      height: 100%;
+      margin-top: 20px;
+    }
+
+    .text {
+      position: absolute;
+      top: 475px;
+      left: 93px;
+      z-index: 11;
+      font-family: '華康新篆體';
+    }
+
+    a {
+      writing-mode: vertical-lr;
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+      letter-spacing: 5px;
+    }
+
+    a:hover {
+      color: black;
+    }
+
+    img {
+      width: 70px;
+      position: absolute;
+      top: 450px;
+      left: 70px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100px;
+      height: 150px;
+      position: relative;
+      /* 設定子元素在3D空間內 */
+      transform-style: preserve-3d;
+      float: left;
+      /* margin: 10px; */
+      transition: transform 1s;
+    }
+
+    .card-front {
+      width: 100%;
+      height: 100%;
+      background-image: url(./img/card1.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      /* 把花色翻到下面 */
+      transform: rotateY(180deg);
+
+    }
+
+    .card-back {
+      width: 100%;
+      height: 100%;
+      background-image: url(./img/card-back.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      /* 翻過來後隱藏背面 */
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .card-open {
+      transform: rotateY(180deg);
+    }
+
+    #loading {
+      background: url(./img/背景圖.jpg) no-repeat top center/110%;
+      position: relative;
+    }
+
+    #loading img {
+      position: fixed;
+      z-index: 400;
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .swal {
+      color: black;
+      writing-mode: horizontal-tb;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading">
+    <img src="./img/Rolling.gif" alt="loading.." />
+  </div>
+  <div class="container">
+    <div id="game"></div>
+  </div>
+
+  <div class="text">
+    <a href="./01_mu_lu.html">回目錄</a>
+  </div>
+  <img src="./img/印章.png">
+
+
+  <script src="./jquery-3.6.0.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    $(window).on('load', function () {
+      $('#loading').remove()
+    })
+
+    // 產生卡片
+    for (let i = 0; i < 32; i++) {
+      $('#game').append(`
+        <div class= "card">
+          <div class= "card-front"></div>
+          <div class= "card-back"></div>
+          </div>
+      `)
+    }
+
+    // 決定數字並打散
+    for (let i = 0; i < 16; i++) {
+      // 決定數字
+      const num = i % 16 + 1
+      $('.card').eq(i).find('.card-front').css('background-image', `url(./img/card${num}.png)`)
+      $('.card').eq(i).attr('data-card', num)
+      // 打散
+      const target = Math.round(Math.random() * 32)
+      $('.card').eq(target).insertAfter($('.card').eq(i))
+    }
+
+    for (let j = 16; j < 32; j++) {
+      // 決定數字
+      const num2 = j % 16 + 1
+      $('.card').eq(j).find('.card-front').css('background-image', `url(./img/${num2}.png)`)
+      $('.card').eq(j).attr('data-card', num2)
+      // 打散
+      const target2 = Math.round(Math.random() * 32)
+      $('.card').eq(target2).insertAfter($('.card').eq(j))
+    }
+
+
+    // 翻牌
+    $('#game').on('click', '.card', function () {
+
+      if ($('.card-open').length < 2 && !$(this).hasClass('card-open')) {
+        $(this).addClass('card-open')
+      }
+
+      if ($('.card-open').length === 2) {
+        if ($('.card-open').eq(0).attr('data-card') === $('.card-open').eq(1).attr('data-card')) {
+          $('.card-open').addClass('card-clear')
+          $('.card-open .card-front').fadeTo(5000, 0)
+        }
+
+        setTimeout(() => {
+          $('.card-open').each(function () {
+            if ($(this).find('.card-front').css('opacity') != 1) {
+              $(this).css('opacity', 0)
+            }
+          })
+
+          $('.card-open').removeClass('card-open')
+        }, 1000)
+      }
+
+
+      if ($('.card-clear').length === 32) {
+
+        Swal.fire({
+          title: '恭喜完成簡單挑戰！',
+          width: 500,
+          padding: '3em',
+          html: '<p>請繼續挑戰進階關卡</p><br><a class="swal" href="./04_shufafanpai_jinjie.html">進階關卡</a>'
+        })
+
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      background: url(./img/背景圖.jpg) no-repeat top center/110%;
+
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #game {
+      width: 75%;
+      height: 100%;
+      margin-top: 90px;
+      margin-left: 50px;
+    }
+
+    .text {
+      position: absolute;
+      top: 475px;
+      left: 93px;
+      z-index: 11;
+      font-family: '華康新篆體';
+    }
+
+    a {
+      writing-mode: vertical-lr;
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+      letter-spacing: 5px;
+    }
+
+    a:hover {
+      color: black;
+    }
+
+    img {
+      width: 70px;
+      position: absolute;
+      top: 450px;
+      left: 70px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 120px;
+      height: 150px;
+      position: relative;
+      /* 設定子元素在3D空間內 */
+      transform-style: preserve-3d;
+      float: left;
+      /* margin: 10px; */
+      transition: transform 1s;
+    }
+
+    .card-front {
+      width: 100%;
+      height: 100%;
+      background-image: url(./img/card1.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      /* 把花色翻到下面 */
+      transform: rotateY(180deg);
+
+    }
+
+    .card-back {
+      width: 100%;
+      height: 100%;
+      background-image: url(./img/card-back.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      /* 翻過來後隱藏背面 */
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .card-open {
+      transform: rotateY(180deg);
+    }
+
+    .inputs {
+      margin-bottom: 100px;
+    }
+
+    input[type='text'] {
+      padding: 20px 50px;
+      border-radius: 10px;
+      border: none;
+      font-size: 18px;
+      background: rgba(0, 0, 0, 0.219);
+      color: white;
+    }
+
+    input[type='button'] {
+      padding: 16px;
+      border-radius: 10px;
+      border: none;
+      font-size: 18px;
+      margin-left: 20px;
+      background: rgba(255, 255, 255, 0.322);
+      cursor: pointer;
+    }
+
+    #loading {
+      background: url(./img/背景圖.jpg) no-repeat top center/110%;
+      position: relative;
+    }
+
+    #loading img {
+      position: fixed;
+      z-index: 400;
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .swal {
+      color: black;
+      writing-mode: horizontal-tb;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading">
+    <img src="./img/Rolling.gif" alt="loading.." />
+  </div>
+  <div class="container">
+    <div id="game"></div>
+    <div class="inputs">
+      <input type="text" placeholder="請輸入文字">
+      <input type="button" value="確認" id="btn">
+    </div>
+  </div>
+
+  <div class="text">
+    <a href="./01_mu_lu.html">回目錄</a>
+  </div>
+  <img src="./img/印章.png">
+
+  <script src="./jquery-3.6.0.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    $(window).on('load', function () {
+      $('#loading').remove()
+    })
+
+    for (let i = 0; i < 16; i++) {
+      $('#game').append(`
+        <div class= "card">
+          <div class= "card-front"></div>
+          <div class= "card-back"></div>
+          </div>
+      `)
+    }
+
+
+    // 決定數字並打散
+    for (let i = 0; i < 16; i++) {
+      // 決定數字
+      const num = i % 16 + 1
+      $('.card').eq(i).find('.card-front').css('background-image', `url(./img/card${num}.png)`)
+      $('.card').eq(i).attr('data-card', num)
+      // 打散
+      const target = Math.round(Math.random() * 15)
+      $('.card').eq(target).insertAfter($('.card').eq(i))
+    }
+
+    $('#game').on('click', '.card', function () {
+
+      if ($('.card-open').length < 1 && !$(this).hasClass('card-open')) {
+        $(this).addClass('card-open')
+      }
+    })
+
+    const answer = ['', '題', '善', '觀', '鍾', '張', '行', '為', '有', '問', '事', '謝', '敬', '此', '當', '後', '答']
+
+    $('#btn').on('click', function () {
+      console.log($('input[type="text"]').val())
+      console.log($('.card-open').attr('data-card'))
+      console.log(answer.indexOf($('input[type="text"]').val()))
+
+      if ($('.card-open').length <= 2) {
+        if (parseInt($('.card-open').attr('data-card')) === answer.indexOf($('input[type="text"]').val())) {
+          $('.card-open').addClass('card-clear')
+          $('.card-open .card-front').fadeTo(1000, 0)
+          $('input[type="text"]').val('')
+        }
+
+        setTimeout(() => {
+          $('.card-open').each(function () {
+            if ($(this).find('.card-front').css('opacity') != 1) {
+              $(this).css('opacity', 0)
+            }
+          })
+
+          $('.card-open').removeClass('card-open')
+          $('input[type="text"]').val('')
+        }, 1000)
+
+        if ($('.card-clear').length === 16) {
+
+          Swal.fire({
+            title: '恭喜完成進階挑戰！',
+            width: 500,
+            padding: '3em',
+            html: '<p>簡單認識草書之後，也記得去欣賞一下原帖哦！</p><br><a class="swal"  href="https://theme.npm.edu.tw/selection/Article.aspx?sNo=04001002">書譜連結</a>'
+          })
+
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
