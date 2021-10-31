@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  html,
+  body {
+    height: 100vh;
+  }
+
+  body {
+    height: 100vh;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.76)), url(bg-full.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .container {
+    width: 75%;
+    height: 75%;
+    display: flex;
+    border: 0.1px solid white;
+  }
+
+  .left-box {
+    width: 50%;
+    padding: 90px;
+    background-image: url(main.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .picPs4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .left-box img {
+    width: 30%;
+  }
+
+  .left-box h3 {
+    margin-top: 30px;
+    color: white;
+    font-size: 2rem;
+  }
+
+  .left-box p {
+    color: white;
+    font-size: .8rem;
+  }
+
+  .right-box {
+    width: 50%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cloud-box {
+    background: rgb(212, 212, 212);
+    height: 100%;
+    background-image: url(cloud.png);
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+
+  .cloud-box h4 {
+    margin: 50px 0 10px 35px;
+    font-size: 22px;
+  }
+
+  .cloud-box p {
+    margin-left: 35px;
+    width: 60%;
+    font-size: .8rem;
+  }
+
+  .tifa-box {
+    background: rgb(0, 0, 0);
+    height: 100%;
+    background-image: url(tifa.png);
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    margin-left: 5px;
+  }
+
+  .tifa-box h4 {
+    margin: 50px 0px 10px 150px;
+    font-size: 22px;
+    color: white;
+  }
+
+  .tifa-box p {
+    margin-left: 150px;
+    width: 65%;
+    font-size: .8rem;
+    color: white;
+  }
+</style>
+
+<body>
+  <div class="container">
+
+    <div class="left-box">
+      <div class="picPs4"><img src="ps4-ff7.png" alt="ps4"></div>
+      <h3>AVAILABLE NOW</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id maiores quo repellat eius aspernatur consequuntur
+        corporis voluptatibus aliquid architecto ullam, assumenda excepturi ratione atque. Sint ullam maxime dicta
+        iusto
+        id.</p>
+    </div>
+
+    <div class="right-box">
+
+      <div class="cloud-box">
+        <h4>Cloud</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, qui debitis reprehenderit ipsam
+          inventore
+          blanditiis illo libero mollitia unde nostrum cumque fugiat consectetur! Soluta quaerat dolore tenetur
+          dignissimos, blanditiis ipsa?</p>
+      </div>
+
+      <div class="tifa-box">
+        <h4>Tifa</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae natus repudiandae consectetur neque
+          voluptatem
+          modi molestias alias esse corporis eos doloremque dolores laborum sapiente hic sed expedita, itaque tenetur
+          delectus.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
