@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .position {
+      position: relative;
+      top: 83px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-color: rgb(117, 62, 62);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+    }
+
+    .bigBlackCircle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-color: #000;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+    }
+
+    /* 嘴(白色橢圓形) */
+    .bigBlackCircle::before {
+      content: "";
+      position: absolute;
+      width: 125px;
+      height: 85px;
+      border-radius: 50%;
+      background-color: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* 鼻子(黑色小橢圓) */
+    .noseBlack {
+      position: absolute;
+      top: 0;
+      bottom: 50px;
+      left: 0px;
+      right: 0;
+      margin: auto;
+      width: 35px;
+      height: 25px;
+      border-radius: 50%;
+      background: #000;
+    }
+
+    /* 嘴(黑色橢圓) */
+    .noseBlack::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      bottom: 0;
+      left: -20px;
+      right: 0px;
+      /* margin: auto; */
+      width: 75px;
+      height: 25px;
+      border-radius: 50%;
+      background: #000;
+    }
+
+    /* 白領 */
+    .whiteV {
+      position: absolute;
+
+      bottom: 10%;
+      left: 100px;
+      right: 0;
+      background-color: rgb(255, 255, 255);
+      width: 40px;
+      height: 50px;
+      transform: skew(40deg);
+    }
+
+    /* 白領2 */
+    .whiteV::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      bottom: 0;
+      left: 60px;
+      right: 0px;
+      background-color: rgb(255, 255, 255);
+      width: 40px;
+      height: 50px;
+      transform: skew(-60deg);
+    }
+
+    /* 紅色臉頰 */
+    .red {
+      position: absolute;
+      top: 35%;
+      bottom: 0;
+      left: -20px;
+      right: 0px;
+      background-color: rgb(226, 1, 1);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .red::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 250px;
+      right: 0px;
+      background-color: rgb(226, 1, 1);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    /* 眼睛 */
+    .whiteEye {
+      position: absolute;
+      top: 18%;
+      bottom: 0;
+      left: 20%;
+      right: 0px;
+      background-color: rgb(255, 255, 255);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .whiteEye::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 200%;
+      right: 0px;
+      background-color: rgb(255, 255, 255);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    /* 眼球 */
+    .blackEye {
+      position: absolute;
+      top: 21%;
+      bottom: 0;
+      left: 23%;
+      right: 0px;
+      background-color: rgb(0, 0, 0);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .blackEye::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 300%;
+      right: 0px;
+      background-color: rgb(0, 0, 0);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    /* 黑色耳朵 */
+    .blackEar {
+      position: absolute;
+      top: 0%;
+      bottom: 0;
+      left: 5%;
+      right: 0px;
+      background-color: rgb(0, 0, 0);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .blackEar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 350%;
+      right: 0px;
+      background-color: rgb(0, 0, 0);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    /* 白色耳朵 */
+    .whiteEar {
+      position: absolute;
+      top: 3%;
+      bottom: 0;
+      left: 8%;
+      right: 0px;
+      background-color: rgb(255, 255, 255);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .whiteEar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 530%;
+      right: 0px;
+      background-color: rgb(255, 255, 255);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bigBlackCircle">
+    <div class="noseBlack"></div>
+    <div class="whiteV"></div>
+    <div class="red"></div>
+    <div class="whiteEye"></div>
+    <div class="blackEye"></div>
+    <div class="blackEar"></div>
+    <div class="whiteEar"></div>
+  </div>
+
+
+
+</body>
+
+</html>

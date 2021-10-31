@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 左三 */
+    .largeSquare {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      border-radius: 5px;
+      width: 300px;
+      height: 100px;
+      border: 1px solid #999;
+      background: linear-gradient(90deg,
+          #fff 0%, #fff 30%,
+          #000 30%, #000 40%,
+          rgb(252, 165, 229) 40%, rgb(255, 216, 245) 100%);
+    }
+
+    p::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 100px;
+      bottom: 0;
+      left: 110px;
+      background: linear-gradient(transparent, rgb(228, 140, 213) 60%, transparent);
+    }
+
+    p::before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 100px;
+      bottom: 0;
+      left: -10px;
+      background: linear-gradient(transparent, #ccc 60%, transparent);
+    }
+
+    /* 左二 */
+    .smallSquare {
+      width: 50px;
+      height: 70px;
+      border: 1px solid #999;
+      position: relative;
+      background: linear-gradient(#fff, #ccc, #fff);
+      border-radius: 5px 0px 0px 5px;
+      right: 52px;
+      bottom: 57px;
+      /* transform: translate(-50%); */
+    }
+
+    /* 左四 */
+    .largeSquare::before {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 70px;
+      border: 1px solid #999;
+      position: relative;
+      background: linear-gradient(#fff, #ccc, #fff);
+      border-radius: 0px 5px 5px 0px;
+      left: 301px;
+      top: 15px;
+    }
+
+    /* 左一 */
+    .largeSquare::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 100px;
+      border: 1px solid #999;
+      position: relative;
+      background: linear-gradient(#fff, #ccc, #fff);
+      border-radius: 5px;
+      left: -80px;
+      bottom: 145px;
+    }
+
+    /* 針頭 */
+    .smallSquare::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 2px;
+      background: #333;
+      top: 30px;
+      left: 404px;
+    }
+
+    /* 刻度 */
+    .smallSquare::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 20px;
+      left: 55px;
+      bottom: 67px;
+      background: linear-gradient(90deg,
+          #333 0%, #333 2%,
+          transparent 2%, transparent 50%,
+          #333 50%, #333 52%,
+          transparent 52%, transparent 100%);
+      background-size: 20px;
+    }
+
+    p {
+      position: absolute;
+      font-size: 14px;
+      color: rgba(153, 153, 153, 0.76);
+      bottom: -15px;
+      left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="largeSquare">
+    <div class="smallSquare"></div>
+    <p>made in Taiwan</p>
+  </div>
+
+</body>
+
+</html>
