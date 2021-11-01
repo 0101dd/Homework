@@ -69,6 +69,10 @@
       background: rgba(0, 0, 0, 0.596);
     }
 
+    .alert h1 {
+      margin: 0;
+    }
+
     .text input,
     .alert input {
       padding: 10px 50px;
@@ -108,6 +112,7 @@
 
     .chicken {
       width: 60px;
+      z-index: 222;
     }
   </style>
 </head>
@@ -121,12 +126,13 @@
   </div>
 
   <div class="alert">
-    <h1>遊戲結束!</h1>
-    <p>分數: <span id="alert-sc">0</span>分</p>
-    <p>你殺了 <span id="count">0</span>隻雞！</p>
+    <h1>遊戲結束</h1>
+    <p>總共獲得了 <span id="alert-sc">0</span>分</p>
+    <p>打倒了 <span id="count-z">0</span>隻殭屍</p>
+    <p>殺了 <span id="count">0</span>隻雞</p>
     <input type="button" value="重新開始" id="restart">
     <br>
-    <input type="button" value="關閉畫面" id="btn-close">
+    <input type="button" value="&emsp;^ - ^&emsp;" id="btn-close">
   </div>
 
 
@@ -144,6 +150,7 @@
     let countdown = 0
     let timer = 0
     let count = 0
+    let countz = 0
 
     const move = (zombie) => {
       const top = `${Math.round(Math.random() * 70)}%`
@@ -171,9 +178,10 @@
 
     score = 0
     $('#score').text(score)
-    countdown = 10
+    countdown = 30
     $('#time').text(countdown)
     count = 0
+    countz = 0
 
     timer = setInterval(function () {
       countdown--
@@ -225,8 +233,10 @@
       })
       $(this).removeClass('zombie').addClass('rotten')
       score++
+      countz++
       $('#score').text(score)
       $('#alert-sc').text(score)
+      $('#count-z').text(countz)
     })
 
     $('#game').on('click', '.chicken', function () {
@@ -251,6 +261,10 @@
 
     $('#btn-tohome').on('click', function () {
       $(location).attr('href', './211025-MC-zombie.html')
+    })
+
+    $('#btn-close').on('click', function () {
+      $(location).attr('href', 'https://www.minecraft.net/zh-hant')
     })
 
   </script>
