@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Rubik', sans-serif;
+}
+
+.container, .category-pic {
+  width: 65%;
+}
+
+/* .category {
+  
+} */
+
+.category {
+  display: none;
+  position: absolute;
+  top: 30px;
+  display: flex;
+}
+
+.category-pic {
+  display: none;
+  position: absolute;
+  top: 200px;
+}
+
+.head-nav ul li:nth-child(1):hover .category,
+.head-nav ul li:nth-child(1):hover .category-pic{
+  display: block;
+}
+
+.category ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.head img {
+  width: 100%;
+}
+
+.head-nav {
+  position: relative;
+}
+
+.head-nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.head-nav ul li {
+  margin:0  20px ;
+}
+
+.head-nav ul li a,
+.head-icon a {
+  text-decoration: none;
+  color: black;
+}
+
+i {
+  margin: 0 7px;
+}
