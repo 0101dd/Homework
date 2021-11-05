@@ -9,40 +9,15 @@
 
 body {
   height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   font-family: 'Rubik', sans-serif;
 }
 
 .container, .category-pic {
   width: 65%;
-}
-
-/* .category {
-  
-} */
-
-.category {
-  display: none;
-  position: absolute;
-  top: 30px;
-  display: flex;
-}
-
-.category-pic {
-  display: none;
-  position: absolute;
-  top: 200px;
-}
-
-.head-nav ul li:nth-child(1):hover .category,
-.head-nav ul li:nth-child(1):hover .category-pic{
-  display: block;
-}
-
-.category ul {
-  display: flex;
-  flex-direction: column;
 }
 
 .head{
@@ -63,7 +38,6 @@ body {
 
 .head-nav ul {
   display: flex;
-  align-items: center;
 }
 
 .head-nav ul li {
@@ -76,6 +50,45 @@ body {
   color: black;
 }
 
+.category {
+  display: flex;
+  position: absolute;
+  top: 30px;
+  width: 70%;
+  height: 220px;
+  
+}
+
+.category-pic {
+  position: absolute;
+  top: 120px;
+  /* left: 20px; */
+  width: 100%;
+}
+
+.category div,
+.category-pic {
+  display: none;
+}
+
+.category div ul {
+  flex-direction: column;
+  text-align: left;
+}
+
+.category div ul li {
+  margin: 4px 15px;
+}
+
 i {
   margin: 0 7px;
+}
+
+.head-nav ul li:nth-child(1):hover .category div,
+.head-nav ul li:nth-child(1):hover .category-pic{
+    display: block;
+}
+.head-nav ul li:nth-child(1):hover .category {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);
+  background: #fff;
 }
