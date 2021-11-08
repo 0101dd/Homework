@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/all.css">
+  <link rel="stylesheet" href="./css/animate.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
@@ -17,6 +18,7 @@
 <body>
   <!-- 標籤列 ------------------------------------------------------------------------------>
   <div class="container">
+    <div class="head-bg"></div>
     <div class="head">
       <div class="head-logo">
         <a href="#">
@@ -25,38 +27,38 @@
       <!-- dropdown nav -->
       <nav class="head-nav">
         <ul>
-          <li><a href="#">Category</a>
-            <div class="category">
-              <div class="category-cat">
-                <ul>
-                  <li><a href="#">CAT</a></li>
-                  <li><a href="#">Leopard cat</a></li>
-                  <li><a href="#">Himalayan Cat</a></li>
-                  <li><a href="#">Bombay Cat</a></li>
-                </ul>
-              </div>
-              <div class="category-dog">
-                <ul>
-                  <li><a href="#">DOG</a></li>
-                  <li><a href="#">Labrador</a></li>
-                  <li><a href="#">Pariah</a></li>
-                  <li><a href="#">Dalmatian</a></li>
-                </ul>
-              </div>
-              <div class="category-fish">
-                <ul>
-                  <li><a href="#">FISH</a></li>
-                  <li><a href="#">Rawas</a></li>
-                  <li><a href="#">Bangda</a></li>
-                  <li><a href="#">Surmai</a></li>
-                </ul>
-              </div>
-              <div class="category-pic">
-                <img src="./image/3-0_thumb.jpg" alt="category-pic">
-              </div>
+          <li><a class="category-li" href="#">Category</a></li>
+          <div class="category">
+            <div class="category-cat">
+              <ul>
+                <li><a href="#">CAT</a></li>
+                <li><a href="#">Leopard cat</a></li>
+                <li><a href="#">Himalayan Cat</a></li>
+                <li><a href="#">Bombay Cat</a></li>
+              </ul>
             </div>
+            <div class="category-dog">
+              <ul>
+                <li><a href="#">DOG</a></li>
+                <li><a href="#">Labrador</a></li>
+                <li><a href="#">Pariah</a></li>
+                <li><a href="#">Dalmatian</a></li>
+              </ul>
+            </div>
+            <div class="category-fish">
+              <ul>
+                <li><a href="#">FISH</a></li>
+                <li><a href="#">Rawas</a></li>
+                <li><a href="#">Bangda</a></li>
+                <li><a href="#">Surmai</a></li>
+              </ul>
+            </div>
+            <div class="category-pic">
+              <img src="./image/3-0_thumb.jpg" alt="category-pic">
+            </div>
+          </div>
 
-          </li>
+
           <li><a href="#">Accessories</a></li>
           <li><a href="#">Pets</a></li>
           <li><a href="#">About Us</a></li>
@@ -70,21 +72,43 @@
         <a href="#"><i class="fas fa-shopping-cart"></i></a>
 
 
+
       </div>
     </div>
-
   </div>
-  <!-- 輪播圖 -------------------------------------------------------------------------------------->
+  <!-- 輪播圖 ------------------------------------->
   <div class="slide-img">
     <img src="./image/slide-1.png" alt="輪播圖">
   </div>
-  <!-- 5個圓圈 -------------------------------------------------------------------------------------->
-  <div class="five-circle">
-    <div class="cilcle"></div>
-    <div class="cilcle"></div>
-    <div class="cilcle"></div>
-    <div class="cilcle"></div>
-    <div class="cilcle"></div>
+  <!-- 5個圓圈 ------------------------------------>
+  <div class="container">
+    <div class="five-circle">
+      <div class="circle">
+        <img src="./image/category-1.png">
+        <div class="under-circle-title">Title</div>
+      </div>
+      <div class="circle">
+        <img src="./image/category-2.png">
+        <div class="under-circle-title">Title</div>
+      </div>
+      <div class="circle">
+        <img src="./image/category-3.png">
+        <div class="under-circle-title">Title</div>
+      </div>
+      <div class="circle">
+        <img src="./image/category-4.png">
+        <div class="under-circle-title">Title</div>
+      </div>
+      <div class="circle">
+        <img src="./image/category-5.png">
+        <div class="under-circle-title">Title</div>
+      </div>
+    </div>
+    <!-- 左右按鈕 -->
+    <div class="btn-circle-left-right">
+      <input type="button" value="&lt;">
+      <input type="button" value=">">
+    </div>
   </div>
 </body>
 
