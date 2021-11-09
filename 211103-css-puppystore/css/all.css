@@ -37,8 +37,6 @@ body {
   height: 100px;
 }
 
-
-
 .head img {
   width: 100%;
 }
@@ -52,7 +50,7 @@ body {
 }
 
 .head-nav ul li {
-  margin:0  20px ;
+  padding:30px  20px ;
 }
 
 .head-nav ul li a,
@@ -64,16 +62,18 @@ body {
 .category {
   display: flex;
   position: absolute;
-  top: 45px;
+  top: 60px;
+  left: 20px;
   width: 500px;
-  height: 420px;
+  height: 320px;
   box-shadow: 5px 10px 15px rgba(0, 0, 0, .4);
   background: #fff;
+  display: none;
 }
 
 .category-pic {
   position: absolute;
-  top: 200px;
+  top: 180px;
   left: 10px;
   width: 95%;
 }
@@ -85,23 +85,31 @@ body {
 }
 
 .category div ul li {
-  margin: 10px 25px;
+  padding: 10px 25px;
+}
+
+.category-cat ul li a:not(.first),
+.category-dog ul li a:not(.first),
+.category-fish ul li a:not(.first){
+  color: rgb(144, 144, 144);
+}
+
+/* category hover 的時候 顯示隱藏選項 */
+.category-li:hover+.category{
+  display: flex;
+}
+
+.category:hover {
+  display: flex;
+}
+
+.category div ul li a:hover {
+  color: rgb(78, 78, 78);
 }
 
 i {
   margin: 0 7px;
 }
-
-.category {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.category-li:hover > .category {
-  opacity: 1;
-  visibility: visible;
-}
-
 /* 輪播圖 -----------------------------------------------*/
 .slide-img {
   margin-top: 100px;
@@ -181,4 +189,90 @@ i {
 .btn-circle-left-right input:hover {
   transition: .3s;
   background: #f0a83e;
+}
+/* About Us ------------------------------------------------- */
+.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-us {
+  text-align: center;
+  margin: 50px 0;
+  width: 100%;
+}
+
+.about-container {
+  display: flex;
+
+}
+
+.about-us h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.about-text {
+  margin-right: 50px;
+}
+
+.about-text h2{
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 55px 0 20px 0;
+}
+
+.about-text p {
+  line-height: 1.5;
+  color: rgb(97, 97, 97);
+  margin-bottom: 40px;
+}
+
+.about-text input {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f0a83e;
+  color: white;
+  font-size: 1rem;
+  line-height: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.about-text input:hover {
+  background-color: #3c2313;
+}
+
+.about-4term {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.smog-term {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 50px;
+}
+
+.smog-term:hover>.smog-term-text h4 {
+  transform-origin: left;
+  transform: scaleX(1.05);
+  transition: .4s;
+}
+
+.smog-term img {
+  margin-right: 10px;
+}
+
+.about-pic {
+  cursor: pointer;
+  position: relative;
+  width: 570px;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.849);
 }
