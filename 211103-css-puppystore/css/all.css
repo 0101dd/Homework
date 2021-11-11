@@ -382,8 +382,10 @@ i {
   opacity: 0;
 }
 
-.trend-8-box:hover>.animate__animated {
+.trend-8-box:hover>.trent-hover-btn .trend-btn:nth-child(1) {
   opacity: 1;
+  transform: translateX(5px);
+  transition: 1s;
 }
 
 
@@ -405,11 +407,6 @@ i {
   /* opacity: 0; */
 }
 
-.trend-btn:hover {
-  background: black;
-  transition: .3s;
-}
-
 .trend-btn {
   margin-bottom: 10px;
   width: 40px;
@@ -418,4 +415,47 @@ i {
   border-radius: 50%;
   background: #f0a83e;
   color: white;
+  /* opacity: 0; */
+}
+
+.trend-btn:hover {
+  background: black;
+  transition: .3s;
+  opacity: 1;
+}
+
+/* bl gr 兩個廣告------------------------------ */
+.bl-gr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bl-gr-box {
+  text-align: center;
+  width: 570px;
+  height: 350px;
+  margin: 50px 10px;
+}
+
+.bl-gr-box h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.bl-gr-box h4 {
+  background: #e8c368;
+  border-radius: 10px;
+  padding: 7px 15px;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.bl-gr-box_pet-food {
+  background: url(../image/topbanner-1.png) no-repeat center center/cover;
+}
+
+.bl-gr-box_chew-food {
+  background: url(../image/topbanner-2.png) no-repeat center center/cover;
 }
