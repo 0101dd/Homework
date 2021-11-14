@@ -436,20 +436,40 @@ i {
   width: 570px;
   height: 350px;
   margin: 50px 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
 }
 
 .bl-gr-box h2 {
   color: white;
   font-size: 2.5rem;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .bl-gr-box h4 {
   background: #e8c368;
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 7px 15px;
+  margin: 10px auto;
+}
+
+.bl-gr-box p {
+  letter-spacing: 3px;
+}
+
+.bl-gr-text {
   width: 40%;
-  margin: 0 auto;
+  margin-right: 20px;
+}
+
+.bl-gr-text span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 1px solid black;
 }
 
 .bl-gr-box_pet-food {
@@ -458,4 +478,71 @@ i {
 
 .bl-gr-box_chew-food {
   background: url(../image/topbanner-2.png) no-repeat center center/cover;
+}
+/*-- want a pet for your loved ones-------------------*/
+.want_a_pet-banner {
+  background: url(../image/parallax.png) no-repeat center/cover;
+  width: 100%;
+  height: 70%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.want_a_pet-text {
+  width: 450px;
+  margin-right: 350px;
+}
+
+.want_a_pet-text h2 {
+  font-size: 3rem;
+  color: #3c2313;
+  margin-bottom: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.want_a_pet-text p {
+  color: rgb(100, 100, 100);
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+.want_a_pet-text input {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f0a83e;
+  color: white;
+  font-size: 1rem;
+  line-height: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.want_a_pet-text input:hover {
+  background: #3c2313;
+}
+
+/* from our blog --------------------------------------- */
+.blog-container {
+  margin-top: 50px;
+  display: flex;
+}
+
+.blog_pk_yl {
+  display: flex;
+  width: 45%;
+  background: #fbfaf6;
+}
+
+.blog_pk_yl-pic img {
+  width: 100%;
+}
+
+.blog_pk_yl-text {
+  width: 50%;
 }
