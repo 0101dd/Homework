@@ -1,4 +1,4 @@
-/* 虛線圓圈旋轉 --------------------------------------------*/
+/* 虛線圓圈旋轉 --------------------------------*/
 @keyframes circleRotate {
   0% {
     transform: rotate(0deg);
@@ -6,5 +6,16 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+/* 標籤列 hover 動畫 */
+@keyframes nav {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
   }
 }

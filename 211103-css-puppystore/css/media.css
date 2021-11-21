@@ -1,0 +1,30 @@
+@media (max-width: 767px) {
+  /* 標籤列---------------- */
+  .head-nav {
+    display: none;
+  }
+
+  .head{
+    justify-content: center;
+  }
+
+  .head-icon a {
+    position: absolute;
+    font-size: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -90px;
+  }
+
+  .head-icon a:first-child {
+    left: -50px;
+  }
+
+  .head-icon a:nth-child(2) {
+    right: -30px;
+  }
+
+  .slide-img img {
+    width: 100%;
+  }
+}
