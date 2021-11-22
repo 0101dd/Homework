@@ -73,7 +73,10 @@ body {
   background: #fff;
   opacity: 0;
   display: none;
-  transition: .6s;
+}
+
+.category-li {
+  animation: nav2 .6s linear;
 }
 
 .category-pic {
@@ -735,4 +738,69 @@ i {
   top: 50%;
   right: 400px;
   transform: translateY(-50%);
+}
+
+/* Our Client Say------------------------------------- */
+.client {
+  border: 1px solid #c5bfba;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-container {
+  margin-top: 70px;
+  width: 60%;
+  display: flex;
+}
+
+.client-pic {
+  margin-right: 40px;
+  position: relative;
+}
+
+.client-pic img {
+  border-radius: 50%;
+}
+
+.client-pic::before {
+  content: "“";
+  position: absolute;
+  font-size: 120px;
+  font-weight: 400;
+  color: #f0a83e;
+  top: 100px;
+  right: 35px;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.client-text h1 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #3c2313;
+  margin-bottom: 15px;
+}
+
+.client-text p {
+  color: #a5a19e;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.client-btn{
+  margin-bottom: 70px;
+}
+
+/* logo---------------------------------------------------- */
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+
+.logo img {
+  width: 100%;
 }
