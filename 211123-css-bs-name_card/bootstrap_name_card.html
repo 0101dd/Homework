@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bootstrap - 通用類別</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css'>
+
+  <style>
+    :root {
+      --bs-subtitle: #003ea5;
+      --bs-bgc: #002155;
+    }
+
+    .sub {
+      color: var(--bs-subtitle)
+    }
+
+    .bgc {
+      background: var(--bs-bgc);
+      /* background: linear-gradient(135deg, var(--bs-subtitle), var(--bs-bgc)); */
+    }
+
+    .text_title h1 {
+      z-index: 11;
+    }
+
+    .text_title h1::before {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 30px;
+      top: 20px;
+      left: 15px;
+      background-color: #00a76dbc;
+      z-index: -1;
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: 100px;
+      right: -150px;
+      border-top: 250px solid transparent;
+      border-left: 250px solid transparent;
+      border-right: 250px solid var(--bs-bgc);
+      transform: rotate(-90deg);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.472));
+    }
+
+    .container::after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      bottom: 100px;
+      left: -150px;
+      border-top: 250px solid transparent;
+      border-left: 250px solid transparent;
+      border-right: 250px solid white;
+      transform: rotate(90deg);
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.472));
+    }
+
+    @media (max-width:576px) {
+      .text_title h1::before {
+        width: 230px;
+        height: 20px;
+        top: 15px;
+      }
+
+      .container::before {
+        opacity: 0;
+      }
+
+      .container::after {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="vh-100 d-md-flex align-items-center bgc">
+  <div class=" container shadow overflow-hidden bg-white position-relative">
+    <div class="row align-items-md-center">
+      <div class="col-md-5 p-0">
+        <div class="pic">
+          <img class="img-fluid" src="./ianxijun_1.jpg">
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md">
+        <div class="text p-5 px-xl-0">
+          <div class="text_title">
+            <h5 class="fw-bold sub">地擘．聖裁者</h5>
+            <h1 class="fw-bolder position-relative">黑罪孔雀 - 弁襲君</h1>
+            <h4 class="fw-bold sub">崇輝聖岸、玄境明都</h4>
+          </div>
+          <div class="text_info mt-5 fs-6 text-secondary">
+            <p>
+              眼前的光明啊，即將黑暗。絕望中的聖光啊，即將降臨。神垂憐，神不朽。 <br>
+              武器：六賦印戒 <br>
+              所有物：地擘印、黑羽傘、煉珠輪、極反相生玉 <br>
+              交通(座騎): 禘猊 <br>
+              網站：https://beta.pili.com.tw/role-view.php?rid=ianxijun
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.js'></script>
+</body>
+
+</html>
