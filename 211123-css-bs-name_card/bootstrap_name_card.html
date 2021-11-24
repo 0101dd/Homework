@@ -62,11 +62,15 @@
       border-top: 300px solid transparent;
       border-left: 300px solid transparent;
       border-right: 300px solid var(--bs-bgc);
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
       filter: drop-shadow(-20px -20px 10px rgba(0, 0, 0, 0.3));
     }
 
     @media (max-width:576px) {
+      body {
+        background: white;
+      }
+
       .text_title h1::before {
         width: 230px;
         height: 20px;
