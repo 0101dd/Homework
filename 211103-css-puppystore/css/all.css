@@ -14,6 +14,7 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   font-family: 'Rubik', sans-serif;
+  overflow-x: hidden;
 }
 
 .container, .category-pic {
@@ -803,4 +804,128 @@ i {
 
 .logo img {
   width: 100%;
+}
+/* footer-search------------------------- */
+.footer-search-bg {
+  width: 100%;
+  height: 150px;
+  background-color: #f0a83e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-text {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+.footer-text i {
+  font-size:  2rem;
+  margin-right: 25px;
+}
+
+.footer-search input[type=text] {
+  padding: 15px 10px;
+  border-radius: 20px;
+  border: none;
+  width: 350px;
+}
+
+.footer-search input::placeholder {
+  padding-left: 20px;
+}
+
+.footer-icon {
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+}
+
+.footer-icon i {
+  transition: .5s;
+}
+
+.footer-icon i:not(.footer-icon i:last-child) {
+  margin-right: 10px;
+}
+
+.footer-icon i:first-child {
+  background-color: #3b5999;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.footer-icon i:nth-child(2) {
+  background-color: #00abef;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.footer-icon i:nth-child(3) {
+  background-color: #cb2028;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.footer-icon i:nth-child(4) {
+  background-color: #cc2366;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.footer-icon i:nth-child(5) {
+  background-color: #0078b7;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+
+.footer-icon i:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.footer-search input[type=button] {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f0a83e;
+  color: white;
+  font-size: 1rem;
+  line-height: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.blog_pk_yl-txt input:hover {
+  background: #3c2313;
+}
+
+/* footer-nav------------------------- */
+.footer-nav-bg {
+  width: 100%;
+  height: 402px;
+  background-color: #3c2313;
 }
