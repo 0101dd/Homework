@@ -909,7 +909,7 @@ i {
   transition: .4s;
 }
 
-.footer-search input[type=button] {
+.footer-search .btn-sub {
   width: 110px;
   height: 35px;
   border: none;
@@ -928,7 +928,11 @@ i {
   filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.507));
 }
 
-.footer-search input[type=button]:hover {
+.footer-search .btn-go {
+  display: none;
+}
+
+.footer-search .btn-sub:hover {
   background: #f0a83e;
 }
 
