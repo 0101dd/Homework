@@ -17,10 +17,15 @@
   }
 
   .head-icon a:first-child {
-    left: -50px;
+    display: inline-block;
+    left: -70px;
   }
 
   .head-icon a:nth-child(2) {
+    left: 0px;
+  }
+
+  .head-icon a:nth-child(3) {
     right: -30px;
   }
 
@@ -333,5 +338,21 @@
     text-align: center;
     margin-top: 20px;
     width: 100%;
+  }
+
+  .footer-nav-info {
+    margin-top: 10px;
+  }
+
+  /* ------------------- */
+  #account,#products,#company {
+    pointer-events: all;
+  }
+
+  #info {
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
   }
 }

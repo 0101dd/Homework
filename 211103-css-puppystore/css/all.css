@@ -123,6 +123,10 @@ body {
 i {
   margin: 0 7px;
 }
+
+.head-icon a:first-child {
+  display: none;
+}
 /* 輪播圖 -----------------------------------------------*/
 .slide-img {
   margin-top: 100px;
@@ -1040,4 +1044,12 @@ i {
   font-size: .8rem;
   line-height: 1.4;
   color: #888480;
+}
+/* ---------------------------------------------------- */
+#account,#products,#company {
+  pointer-events: none ; 
+}
+
+#info {
+  display: none;
 }
