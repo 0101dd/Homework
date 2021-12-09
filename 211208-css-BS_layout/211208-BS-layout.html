@@ -23,6 +23,19 @@
     .card-3-item {
       overflow: hidden;
     }
+
+    .width-vw {
+      width: 50vw;
+    }
+
+    @media (max-width: 992px) {
+
+      .card-2-pic.width-vw,
+      .card-2-text.width-vw {
+        width: 100vw;
+      }
+
+    }
   </style>
 </head>
 
@@ -85,9 +98,9 @@
     </button>
   </div>
   <!-- 3張卡片---------------------------------------- -->
-  <div class="container d-flex justify-content-lg-center my-5 px-5">
-    <div class="row gy-3 gx-md-3">
-      <div class="col-md-4">
+  <div class="container-md d-flex justify-content-lg-center my-5 px-5">
+    <div class="row gy-3 gx-lg-3">
+      <div class="col-lg-4">
         <div class="card-3-item border">
           <div class="card-3-pic">
             <img class="img-fluid" src="https://picsum.photos/500/400/?random=31">
@@ -98,7 +111,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4">
         <div class="card-3-item border">
           <div class="card-3-pic">
             <img class="img-fluid" src="https://picsum.photos/500/400/?random=21">
@@ -109,7 +122,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4">
         <div class="card-3-item border">
           <div class="card-3-pic">
             <img class="img-fluid" src="https://picsum.photos/500/400/?random=22">
@@ -124,30 +137,31 @@
   </div>
   <!-- 2x2 ---------------------------------------------------------------->
   <div class="row">
-    <div class="col-md-12 d-flex vw-100 px-0">
-      <div class="card-2-pic" style="width: 50vw;">
+    <div class="col-lg-12 d-lg-flex vw-100 px-0">
+      <div class="card-2-pic width-vw">
         <img class="img-fluid" src="https://picsum.photos/1000/500/?random=1">
       </div>
-      <div class="card-2-text text-center d-flex flex-column justify-content-center align-items-center bg-light"
-        style="width: 50vw;">
+      <div
+        class="card-2-text text-center d-flex flex-column justify-content-center align-items-center bg-light width-vw">
         <h1 class="mt-3">Coffee Shop</h1>
         <p class="p-3">
           人口吸收回來程式計算事實上傳輸有個上面任何將在分公司，不去也不，普通部門隨時這樣作用感到節目直播主，感染建材教授階段幹什麼床上就能全市不喜歡，提出了說什麼提醒政治臺灣網絡一個月研究生方式，辦理超過重。人口吸收回來程式計算事實上傳輸有個上面任何將在分公司，不去也不，普通部門隨時這樣作用感到節目直播主，感染建材教授階段幹什麼床上就能全市不喜歡，提出了說什麼提醒政治臺灣網絡一個月研究生方式，辦理超過重。
         </p>
-        <input type="button" value="VIEW COLLECTION" class="btn btn-success align-self-center">
+        <input type="button" value="VIEW COLLECTION" class="btn btn-success align-self-center mb-3">
       </div>
     </div>
-    <div class="col-md-12 d-flex vw-100 px-0">
-      <div class="card-2-text text-center d-flex flex-column justify-content-center bg-light" style="width: 50vw;">
+    <div class="col-lg-12 d-lg-flex vw-100 px-0">
+      <div class="card-2-pic width-vw order-lg-2">
+        <img class="img-fluid" src="https://picsum.photos/1000/500/?random=51">
+      </div>
+      <div class="card-2-text text-center d-flex flex-column justify-content-center bg-light width-vw order-lg-1">
         <h1 class="mt-3">Coffee Shop</h1>
         <p class="p-3">
           人口吸收回來程式計算事實上傳輸有個上面任何將在分公司，不去也不，普通部門隨時這樣作用感到節目直播主，感染建材教授階段幹什麼床上就能全市不喜歡，提出了說什麼提醒政治臺灣網絡一個月研究生方式，辦理超過重。人口吸收回來程式計算事實上傳輸有個上面任何將在分公司，不去也不，普通部門隨時這樣作用感到節目直播主，感染建材教授階段幹什麼床上就能全市不喜歡，提出了說什麼提醒政治臺灣網絡一個月研究生方式，辦理超過重。
         </p>
-        <input type="button" value="VIEW COLLECTION" class="btn btn-success align-self-center">
+        <input type="button" value="VIEW COLLECTION" class="btn btn-success align-self-center mb-3">
       </div>
-      <div class="card-2-pic" style="width: 50vw;">
-        <img class="img-fluid" src="https://picsum.photos/1000/500/?random=51">
-      </div>
+
     </div>
   </div>
   <!-- map -->
@@ -165,19 +179,24 @@
       </div>
       <!-- ------------------------------------ -->
       <form class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">姓名</label>
-          <input type="email" class="form-control" id="inputEmail4">
+        <div class="col-lg-6">
+          <label for="inputName" class="form-label">姓名</label>
+          <div class="input-group position-relative">
+            <input type="text" class="form-control" id="autoSizingInputGroup">
+            <div class="input-group-text position-absolute end-0">
+              先生<input type="radio" class="mx-2">女士<input type="radio" class="mx-2">
+            </div>
+          </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-lg-6">
           <label for="inputPassword4" class="form-label">電話</label>
           <input type="password" class="form-control" id="inputPassword4">
         </div>
-        <div class="col-6">
+        <div class="col-lg-6 ">
           <label for="inputAddress" class="form-label">電子信箱</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <input type="text" class="form-control" id="inputAddress">
         </div>
-        <div class="col-6">
+        <div class="col-lg-6">
           <label for="inputState" class="form-label">問題類型</label>
           <select id="inputState" class="form-select">
             <option selected>餐飲建議</option>
@@ -185,7 +204,7 @@
             <option>價格太貴</option>
           </select>
         </div>
-        <div class="col-md-12">
+        <div class="col-lg-12">
           <label for="inputCity" class="form-label">意見需求</label>
           <textarea id="inputCity" class="border" style="height: 100px; width: 100%;"></textarea>
         </div>
@@ -194,14 +213,51 @@
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
             <label class="form-check-label" for="gridCheck">
-              Check me out
+              訂閱泰山莊園最新資訊
             </label>
           </div>
         </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+        <div class="col-12 d-flex justify-content-center">
+          <button type="submit" class="btn btn-danger mb-5">送出</button>
         </div>
       </form>
+    </div>
+  </div>
+  <!-- footer------------------------------------------- -->
+  <div class="container-fluid bg-black">
+    <div class="container text-white p-5">
+      <div class="row">
+        <div class="col-lg-3 col-6">
+          <img class="rounded-circle" src="https://picsum.photos/150/150/?random=71">
+        </div>
+        <div class="col-lg-3 col-6">
+          <h5>Address</h5>
+          <p>
+            Address <br>
+            1234 Street Name <br>
+            City, AA 99999
+          </p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <h5>Links</h5>
+          <p>
+            Website builder <br>
+            Download for Windows <br>
+            Download for Mac
+          </p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <h5>Contacts</h5>
+          <p>
+            Email: support@mobirise.com <br>
+            Phone: +1 (0)000 0000 001 <br>
+            Fax: +1 (0)000 0000 002
+          </p>
+        </div>
+      </div>
+      <p class="mt-5 text-center">
+        &copy;Copyright 2021 KaiFU Change - All Right Reserved
+      </p>
     </div>
   </div>
 
