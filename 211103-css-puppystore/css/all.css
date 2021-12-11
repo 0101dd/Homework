@@ -63,6 +63,10 @@ body {
   color: black;
 }
 
+.media-category {
+  display: none;
+}
+
 .category {
   display: flex;
   position: absolute;
@@ -1053,3 +1057,4 @@ i {
 #info {
   display: none;
 }
+

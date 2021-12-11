@@ -4,6 +4,37 @@
     display: none;
   }
 
+  .media-category {
+    display: inline-block;
+    position: absolute;
+    top: 100px;
+    left: -130px;
+    background: white;
+    width: 300px;
+    height: 100vh;
+  }
+
+  .media-category a {
+    text-decoration: none;
+    color: #626262;
+    cursor: pointer;
+  }
+  
+  .media-category li {
+    padding: 16px;
+  }
+
+  .media-category>li>a {
+    color: black;
+  }
+
+  .fa-times {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+  }
+
+/* -------------------------------------------- */
   .head{
     justify-content: center;
   }
@@ -341,10 +372,18 @@
   }
 
   .footer-nav-info {
-    margin-top: 10px;
+    margin-top: 0px;
   }
 
-  /* ------------------- */
+  .footer-nav-3row {
+    margin: 0 20px;
+  }
+
+  .footer-nav-info-txt h2 {
+    display: none;
+  }
+
+  /* jq---------------------------------------------- */
   #account,#products,#company {
     pointer-events: all;
   }
@@ -354,5 +393,17 @@
     color: white;
     padding: 10px;
     margin-bottom: 10px;
+  }
+
+  .jq-account, .jq-products, .jq-company, .footer-nav-3row {
+    display: none;
+  }
+
+  .footer-nav-icon, .footer-nav-info-txt {
+    display: inline-block;
+  }
+
+  div {
+    vertical-align: middle;
   }
 }
