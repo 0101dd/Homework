@@ -4,6 +4,14 @@
     display: none;
   }
 
+  #cat+ul, #dog+ul, #fish+ul {
+    display: none;
+  }
+
+  #category+ul {
+    display: none;
+  }
+
   .media-category {
     display: inline-block;
     position: absolute;
@@ -34,6 +42,12 @@
     right: 0;
   }
 
+  .fa-angle-up {
+    position: absolute;
+    right: 50px;
+    font-size: 1.5rem;
+  }
+
 /* -------------------------------------------- */
   .head{
     justify-content: center;
@@ -60,6 +74,11 @@
     right: -30px;
   }
 
+  /* 輪播圖------------------------------------- */
+  .slide-img {
+    overflow-x: hidden;
+    display: flex;
+  }
   .slide-img img {
     width: 100%;
   }
@@ -67,6 +86,7 @@
   /* 5個圓圈------------------------------------ */
   .five-circle {
     margin-top: 50px;
+    position: relative;
   }
 
   .circle {
