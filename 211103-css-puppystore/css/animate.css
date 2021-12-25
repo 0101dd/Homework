@@ -81,4 +81,24 @@
   }
 }
 
-@keyframes tilt-in-top-1{0%{transform:rotateY(30deg) translateY(-300px) skewY(-30deg);opacity:0}100%{transform:rotateY(0deg) translateY(0) skewY(0deg);opacity:1}}
+@keyframes tilt-in-top-1 {
+  0% {
+    transform:rotateY(30deg) translateY(-300px) skewY(-30deg);
+    opacity:0
+  }
+  100% {transform:rotateY(0deg) translateY(0) skewY(0deg);
+    opacity:1
+  }
+}
+
+@keyframes logo-move {
+  0% {
+    transform: translateX(-140px)
+  }
+  50% {
+    transform: translateX(-280px)
+  }
+  100% {
+    transform: translateX(-420px)
+  }
+}

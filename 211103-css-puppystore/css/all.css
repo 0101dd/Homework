@@ -133,7 +133,9 @@ i {
 }
 /* 輪播圖 -----------------------------------------------*/
 .flex-viewport {
-  margin-top: 100px;
+  margin-top: 90px;
+  /* width: 1920px;
+  height: 850px; */
 }
 
 .slides {
@@ -144,17 +146,19 @@ i {
   position: absolute;
   top: 200px;
   left: 3000px;
+  opacity: 0;
 }
 
 .slides-text2 {
   position: absolute;
   top: 200px;
   left: 4800px;
+  opacity: 0;
 }
 
 .flex-active-slide .slides-text,
 .flex-active-slide .slides-text2 {
-  animation:tilt-in-top-1 .6s cubic-bezier(.25,.46,.45,.94) both;
+  animation:tilt-in-top-1 1.2s cubic-bezier(.25,.46,.45,.94) both;
 }
 
 .slides-text h4,
@@ -388,6 +392,11 @@ i {
 }
 
 /* Treading Products --------------------------------------*/
+.all-trend-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .trending-products {
   text-align: center;
   margin-top: 50px;
@@ -615,8 +624,38 @@ i {
 .want_a_pet-text input:hover {
   background: #3c2313;
 }
+/* ------------------------- */
+.special-all-box {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  display: flex;
+  flex-shrink: 0;
+  width: 1269px;
+}
 
 /* from our blog --------------------------------------- */
+.blog-move {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  display: flex;
+  width: 1258px;
+}
 .blog-container {
   margin: 50px 0;
   display: flex;
@@ -821,6 +860,26 @@ i {
 }
 
 /* Our Client Say------------------------------------- */
+.client-move {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+  list-style: none;
+  box-sizing: border-box;
+  margin-left: 100px;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  display: flex;
+  flex-shrink: 0;
+  width: 1564px;
+}
+
+.client-box {
+  display: flex;
+}
+
 .client {
   border: 1px solid #c5bfba;
   margin-top: 70px;
@@ -832,8 +891,9 @@ i {
 
 .client-container {
   margin-top: 70px;
-  width: 60%;
+  width: 50%;
   display: flex;
+  overflow: hidden;
 }
 
 .client-pic {
@@ -879,6 +939,14 @@ i {
   display: flex;
   justify-content: space-between;
   margin: 80px 0;
+  overflow-x: hidden;
+}
+
+.logo-move {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  animation: logo-move 20s linear infinite
 }
 
 .logo img {
