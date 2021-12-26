@@ -175,6 +175,10 @@ $(function () {
       }
     }
   })
+
+  if ($(window).width() > 1902) {
+    $('.special-all-box').css('width', '1550px')
+  }
 })
 
 // blog-------------------------------------
@@ -204,6 +208,9 @@ $(function () {
       }
     }
   })
+  if ($(window).width() > 1902) {
+    $('.blog-move').css('width', '1550px')
+  }
 })
 
 // client-----------------------------------
@@ -233,4 +240,8 @@ $(function () {
       }
     }
   })
+
+  if ($(window).width() > 1902) {
+    $('.client-move').css('width', '1550px')
+  }
 })

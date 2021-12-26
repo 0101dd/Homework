@@ -485,6 +485,7 @@
 
   .client-text {
     text-align: center;
+    width: 300px;
   }
 
   .client-text h1 {

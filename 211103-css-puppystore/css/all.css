@@ -131,15 +131,19 @@ i {
 .head-icon a:first-child {
   display: none;
 }
-/* 輪播圖 -----------------------------------------------*/
+/* 輪播圖 -----------------------------------------*/
 .flex-viewport {
   margin-top: 90px;
-  /* width: 1920px;
-  height: 850px; */
+  width: 1920px;
+  height: 850px;
 }
 
 .slides {
   position: relative;
+}
+
+.slide-img img {
+  width: 100%;
 }
 
 .slides-text {
@@ -891,7 +895,7 @@ i {
 
 .client-container {
   margin-top: 70px;
-  width: 50%;
+  width: 80%;
   display: flex;
   overflow: hidden;
 }
@@ -914,6 +918,10 @@ i {
   top: 100px;
   right: 35px;
   font-family: 'Noto Sans TC', sans-serif;
+}
+
+.client-text {
+  width: 740px;
 }
 
 .client-text h1 {
