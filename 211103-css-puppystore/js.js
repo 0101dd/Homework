@@ -24,7 +24,6 @@ $('#info').on('click', function () {
 // hamburger 收縮動畫-------------------------------
 $('.media-category').css("left", "-510px")
 
-
 // $('#hamburger').on('click', function () {
 //   $('.media-category').animate({
 //     left: -130 + 'px'
@@ -37,9 +36,24 @@ $('.media-category').css("left", "-510px")
 //   }, 500)
 // })
 
+// if ($(window).width() >= 1100) {
+//   $('#hamburger').on('click', function () {
+//     $('.media-category').animate({
+//       left: -210 + 'px'
+//     }, 500)
+//   })
+  
+//   $('#fa-times').on('click', function () {
+//     $('.media-category').animate({
+//       left: -510 + 'px'
+//     }, 500)
+//   })
+// }
+
 $(function () {
-  if ($(window).width() > 1100) {
+  if ($(window).width() >= 1100) {
     $('#hamburger').on('click', function () {
+      $('.media-category').css('display', 'inline-block')
       $('.media-category').animate({
         left: -210 + 'px'
       }, 500)
